@@ -2,7 +2,7 @@
 
 namespace ArdaGnsrn\Tron;
 
-class Tron
+final class Tron
 {
     protected TronClient $client;
 
