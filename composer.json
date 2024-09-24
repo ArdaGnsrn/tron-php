@@ -16,7 +16,9 @@
     ],
     "require": {
         "php": "^8.1",
+        "ext-bcmath": "*",
         "guzzlehttp/guzzle": "^7.9",
+        "kornrunner/secp256k1": "^0.3.0",
         "simplito/elliptic-php": "^1.0"
     },
     "require-dev": {

@@ -26,4 +26,9 @@ final class Tron
     {
         return new Resources\Account($this->client);
     }
+
+    public function transactions(): Resources\Transaction
+    {
+        return new Resources\Transaction($this->client);
+    }
 }
