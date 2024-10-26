@@ -27,13 +27,14 @@ final class Account extends BaseResource implements AccountContract
         return Tron::convert($body['balance']);
     }
 
-    public function transactions(string $address, bool $onlyConfirmed = true, $limit = 20): array
+    public function transactions(string $address, bool $onlyConfirmed = true, $limit = 20, $fingerprint = null): array
     {
         $address = Utils::addressToHex($address);
         $response = $this->tronClient->client->get("/v1/accounts/{$address}/transactions", [
             'query' => [
                 'only_confirmed' => $onlyConfirmed,
                 'limit' => $limit,
+                ...(isset($fingerprint) ? ['fingerprint' => $fingerprint] : []),
             ],
         ]);
         return json_decode($response->getBody()->getContents(), true);
