@@ -8,5 +8,5 @@ interface AccountContract
 
     public function balance(string $address): float;
 
-    public function transactions(string $address, bool $onlyConfirmed = true, $limit = 20): array;
+    public function transactions(string $address, bool $onlyConfirmed = true, $limit = 20, $fingerprint = null): array;
 }
